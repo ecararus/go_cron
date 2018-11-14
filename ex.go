@@ -20,7 +20,7 @@ func cronDispatchJob(cw CronWrapper) {
 		tab.Schedule(cornPattern, cron.JobFunc(func(context.Context) {
 			mu.Lock()
 			defer mu.Unlock()
-			executor()
+			executor() // in case i pass map of 2 executors fistone is never executed howevere second is executed 2 times 
 		}))
 	}
 
